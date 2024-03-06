@@ -1,5 +1,189 @@
-* {
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 40px;
-  font-weight: bold;
+@import url("https://use.typekit.net/uez5ftq.css");
+
+body {
+  font-family: "Proxima Nova", "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  .action {
+    &.primary {
+      background-color: #181E28;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-family: "Proxima Nova", "Helvetica", sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      min-height: 47px;
+      padding: 15px 30px;
+    }
+  }
+
+  header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .logo {
+      filter: invert(1);
+      width: 130px;
+    }
+  }
+  
+  .hero-banner {
+    align-items: flex-end;
+    box-sizing: border-box;
+    display: flex;
+    height: 100dvh;
+    justify-content: flex-start;
+    min-height: 500px;
+    position: relative;
+    
+    .hero-bkg-video {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      
+      .video-container {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &.firstVid {
+          transform: rotate(180deg);
+          z-index: 3;
+
+          &:after {
+            background-image: linear-gradient(to bottom, #26DCCA, #48B7A9);
+            content: '';
+            bottom: 0;
+            left: 0;
+            opacity: .5;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1; 
+          }
+        }
+
+        &.secondVid {
+          z-index: 2;
+
+          &:after {
+            background-image: linear-gradient(to bottom, #BD7268, #FCE08E);
+            content: '';
+            bottom: 0;
+            left: 0;
+            opacity: .75;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1; 
+          }
+        }
+
+        &.thirdVid {
+          z-index: 1;
+
+          &:after {
+            background-image: linear-gradient(to bottom, #BB6A0C, #9F640D);
+            content: '';
+            bottom: 0;
+            left: 0;
+            opacity: .75;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1; 
+          }
+        }
+      }
+
+      video {
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        width: 100%;
+      }
+    }
+    
+    h1 {
+      color: #161616;
+      line-height: 1;
+
+      span:first-child {
+        display: block;
+        width: 100%;
+      }
+      
+      #heroContent {
+        border-right: 2px solid white;
+        color: white;
+        min-height: 60px;
+
+        &.blinking {
+          animation: blinking .5s infinite alternate;
+        }
+      }
+    }
+
+    .indicators {
+      align-items: center;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+
+      .indicator {
+        background-color: #181E28;
+        border-radius: 100px;
+        height: 8px;
+        opacity: .4;
+        width: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  body {
+    .hero-banner {
+      padding: 60px 20px 20px 20px;
+      
+      .hero-container {
+        h1 {
+          font-size: 20vw;
+          margin: 0 0 30px 0;
+
+          #heroContent {
+            font-size: 18vw;
+          }
+        }
+
+        .indicators {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blinking {
+  0% {
+    border-right: 2px solid white;
+  }
+
+  100% {
+    border-right: 2px solid transparent;
+  }
 }
