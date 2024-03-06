@@ -86,7 +86,7 @@ body .hero-banner .hero-bkg-video .video-container.thirdVid {
   z-index: 1;
 }
 body .hero-banner .hero-bkg-video .video-container.thirdVid:after {
-  background-image: linear-gradient(to bottom, #BB6A0C, #9F640D);
+  background-image: linear-gradient(to bottom, rgba(187, 106, 12, 0.2), #9F640D);
   content: "";
   bottom: 0;
   left: 0;
